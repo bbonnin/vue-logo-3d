@@ -4,10 +4,10 @@
 </template>
 
 <script>
-import THREE from "./three";
+import THREE from './three';
 
 export default {
-  name: "Logo3D",
+  name: 'Logo3D',
 
   data() {
     return {
@@ -54,7 +54,7 @@ export default {
     var loader = new THREE.GLTFLoader();
     var that = this;
 
-    loader.load("/logo2.glb", function (gltf) {
+    loader.load('/logo_vue.glb', function (gltf) {
 
       gltf.scene.scale.set(2, 2, 2);
       gltf.scene.position.x = 0;
