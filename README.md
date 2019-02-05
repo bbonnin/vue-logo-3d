@@ -19,4 +19,5 @@ npm run build
 ```bash
 npm i terser@3.14
 ```
-![3D logo][vuejsamsterdam-countdown.png]
+
+![3D logo](vuejsamsterdam-countdown.png)
