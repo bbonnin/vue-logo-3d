@@ -20,4 +20,4 @@ npm run build
 npm i terser@3.14
 ```
 
-[[vuejsamsterdam-countdown.png]]
+![3D logo](vuejsamsterdam-countdown.png)
