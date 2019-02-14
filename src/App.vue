@@ -1,8 +1,7 @@
 <template>
   <div id="app">
-    <!-- img src="./assets/logo.png"/ -->
-    <h2><a href="https://www.vuejs.amsterdam/" class="amsterdam">#VuejsAmsterdam</a> will start in  {{countdown}}</h2>
-    <h4>(Made with <a class="amsterdam" href="https://threejs.org/">three.js</a>, so, yes, you can move the 3D logo ;-) )</h4>
+    <h2 v-if="showCountdown"><a href="https://www.vuejs.amsterdam/" class="amsterdam">#VuejsAmsterdam</a> will start in  {{countdown}}</h2>
+    <h4>Made with <a class="amsterdam" href="https://threejs.org/">three.js</a>, so, yes, you can move the 3D logo ;-)</h4>
     <Logo3D />
   </div>
 </template>
@@ -19,12 +18,15 @@ export default {
 
   data() {
     return {
-      countdown: this.getCountdown()
+      countdown: this.getCountdown(),
+      showCountdown: false
     }
   },
 
   mounted() {
-    setInterval(this.updateCountdown, 1000);
+    if (this.showCountdown) {
+      setInterval(this.updateCountdown, 1000);
+    }
   },
 
   methods: {
@@ -35,8 +37,9 @@ export default {
     getCountdown: function () {
       const now = new Date();
       // Vuejs Amsterdam start date
-      const startDate = new Date(2019, 1, 14, 9);
+      const startDate = new Date(2019, 1, 13, 9);
       let diff = (startDate - now) / 1000;
+      console.log(diff)
 
       const days = Math.floor(diff / (3600 * 24));
       diff -= days * 3600 * 24;
